@@ -14,14 +14,19 @@ async function hentData() {
   vis(json);
 }
 
-function vis(personliste) {
-  // console.log(personliste);
-  personliste.forEach((person) => {
+function vis(retter) {
+  console.log(retter);
+
+  retter.forEach((ret) => {
     const klon = template.cloneNode(true).content;
-    klon.querySelector(".profilbillede").src = "faces/" + person.profilbillede;
-    klon.querySelector(".fornavn").textContent = person.fornavn;
-    klon.querySelector(".efternavn").textContent = person.efternavn;
-    klon.querySelector(".email").textContent = person.email;
+    klon.querySelector(".kategori").textContent = ret.kategori;
+    klon.querySelector(".navn").textContent = ret.navn;
+    klon.querySelector(".pris").textContent = ret.pris;
+    klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+    klon.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
+    klon.querySelector(".oprindelsesregion").textContent =
+      ret.oprindelsesregion;
+    // klon.querySelector(".billede").src = "faces/" + ret.billede;
     section.appendChild(klon);
   });
 }
