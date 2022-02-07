@@ -26,7 +26,8 @@ function vis(retter) {
     klon.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
     klon.querySelector(".oprindelsesregion").textContent =
       ret.oprindelsesregion;
-    klon.querySelector(".billede").src = "medium/ + -md.jpg" + ret.billedenavn;
+    // klon.querySelector(".billede").src = "billeder/-md.jpg" + ret.billednavn;
+    klon.querySelector(".billede").src = `billeder/${ret.billednavn}-md.jpg`;
     section.appendChild(klon);
   });
 }
