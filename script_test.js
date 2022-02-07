@@ -18,7 +18,7 @@ hentData();
 function filtrerRetter() {
   filter = this.dataset.kategori;
   console.log("filter", filter);
-  vis();
+  vis(retter);
 }
 async function hentData() {
   const resspons = await fetch(url, options);
