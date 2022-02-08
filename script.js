@@ -26,6 +26,7 @@ function filtrerRetter() {
   visRetter();
   header.textContent = this.textContent;
 }
+
 async function hentData() {
   const resspons = await fetch(url, options);
   retter = await resspons.json();
@@ -48,6 +49,8 @@ function visRetter() {
       klon
         .querySelector(".billede")
         .addEventListener("click", () => visDetaljer(ret));
+      // klon.querySelector("article").addEventListener("click", ()=>
+      //   location.href =
       section.appendChild(klon);
     }
   });
