@@ -1,5 +1,6 @@
 // const fil = persongalleri j.son
 const header = document.querySelector(".h1_kategori");
+const modal = document.querySelector("#modal");
 const url = "https://babushka-dd8a.restdb.io/rest/menu";
 const options = {
   headers: {
@@ -7,7 +8,7 @@ const options = {
   },
 };
 document.addEventListener("DOMContentLoaded", start);
-let retter;
+let retter = [];
 let filter = "alle";
 
 // første funktion der kaldes efter DOM er loaded
@@ -43,13 +44,22 @@ function visRetter() {
       klon.querySelector(".navn").textContent = ret.navn;
       klon.querySelector(".pris").textContent = ret.pris + "kr.";
       klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
-      klon.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
-      klon.querySelector(".oprindelsesregion").textContent =
-        ret.oprindelsesregion;
       klon.querySelector(".billede").src = `billeder/${ret.billednavn}-md.jpg`;
+      klon
+        .querySelector(".billede")
+        .addEventListener("click", () => visDetaljer(ret));
       section.appendChild(klon);
     }
   });
 }
+function visDetaljer(ret) {
+  console.log(ret);
+  modal.querySelector("h2").textContent = ret.navn;
+  modal.querySelector("img").src = `billeder/${ret.billednavn}-md.jpg`;
+  modal.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
+  modal.querySelector(".oprindelsesregion").textContent = ret.oprindelsesregion;
+  modal.style.display = "block";
+}
+modal.addEventListener("click", () => (modal.style.display = "none"));
 
 hentData();
