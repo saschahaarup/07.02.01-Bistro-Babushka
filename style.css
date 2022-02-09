@@ -2,12 +2,13 @@
   box-sizing: border-box;
 }
 .forside_body {
-  background-color: #bf6e50;
+  background-color: #bf846f;
   margin: 0%;
+  height: 600px;
 }
 
 body {
-  background-color: #e7dcd8;
+  background-color: #ebe4e1;
   margin: 0%;
 }
 
@@ -19,31 +20,33 @@ img {
 
 .navbar {
   /* overflow: hidden; */
-  background-color: #bf6e50;
+  display: flex;
+  flex-wrap: wrap;
+  color: #c8c9ce;
   position: fixed;
   top: 0;
   width: 100%;
   font-family: "Philosopher", sans-serif;
   font-size: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
   padding: 20px;
   gap: 70px;
+  background-color: #bf846f;
 }
 
 .navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000000;
+  color: #eaebf1;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-size: 1.3rem;
 }
 
 .navbar a:hover {
-  /* background: rgb(128, 0, 0); */
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 header {
@@ -58,68 +61,76 @@ header {
 }
 
 .splashbillede {
-  opacity: 90%;
+  opacity: 95%;
 }
 
 .splashtext1 {
-  color: #bf6e50;
   position: relative;
   text-align: center;
   font-size: 6.5rem;
-  top: -600px;
+  top: -610px;
   font-family: "Philosopher", sans-serif;
+  color: #bf846f;
+  text-shadow: 2px 2px 4px #353232;
 }
 .splashtext2 {
-  color: #bf6e50;
+  color: #bf846f;
   position: relative;
   text-align: center;
   font-size: 3rem;
-  top: -690px;
+  top: -700px;
   font-family: "Philosopher", sans-serif;
+  text-shadow: 2px 2px 4px #3f3c3c;
 }
 
 .hr1 {
-  color: #bf6e50;
+  border-top: #bf846f 4px solid;
+  color: #bf846f;
   position: relative;
-  top: -660px;
+  top: -670px;
   width: 1000px;
   overflow: hidden;
 }
 
-/* bistro menu-siden */
+/* menu siden */
 .space {
   height: 15px;
 }
 section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1px;
+  gap: 5px;
 }
+
 article {
-  /* border: 2px solid #bf6e50; */
   margin: 10px;
   padding: 10px;
-  background-color: #f5f3f1;
-  color: #bf846f;
-  /* border: solid 2px #bf846f; */
+  color: #ffffff;
+  background-color: #bf846f;
+  border: solid 6px #bf6e50;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  outline: 2px solid white;
+  outline-offset: -8px;
 }
 .filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
-  gap: 46px;
+  justify-content: center;
+  gap: 30px;
   margin: 10px;
 }
 nav button {
   margin: 5px;
-  width: 140px;
+  width: 90px;
   height: 30px;
   gap: 20px;
   background-color: #bf846f;
   border: #bf846f;
   color: white;
   font-family: "Philosopher", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 nav button a:hover {
   margin: 5px;
@@ -136,7 +147,7 @@ nav button a:hover {
   text-align: center;
   font-family: "Philosopher", sans-serif;
   font-size: 3rem;
-  color: #bf6e50;
+  color: #524b49;
 }
 
 #modal {
@@ -144,24 +155,50 @@ nav button a:hover {
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 1px;
-  left: 1px;
-  background-color: #bf6e50;
-  border-radius: 25px;
-  /* border: solid 10px darkred; */
+  top: -1px;
+  left: -10px;
+  margin: 10px;
+  padding: 10px;
+  color: #524b49;
+  background-color: #ebe4e1;
+  border: solid 5px #bf846f;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1rem;
+  text-align: center;
 }
 
 #modal article {
-  width: 690px;
-  left: 380px;
+  width: 50%;
+  left: 50%;
   position: fixed;
+  left: 350px;
   top: 75px;
-  background-color: #e7cdc3;
+  background-color: #bf846f;
   color: white;
 }
 
+.tilbageknap {
+  margin: 5px;
+  width: 140px;
+  height: 30px;
+  gap: 20px;
+  background-color: #bf846f;
+  border: #bf846f;
+  color: white;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1rem;
+}
+
 /*footer*/
-.footer {
+.hr2 {
+  color: #bf6e50;
+  border-top: #e4dfdb 4px solid;
+  position: relative;
+  top: -10px;
+  width: 1435px;
+  overflow: hidden;
+}
+/* .footer {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
@@ -173,4 +210,4 @@ nav button a:hover {
   top: 0;
   padding: 20px;
   height: 20px;
-}
+} */
