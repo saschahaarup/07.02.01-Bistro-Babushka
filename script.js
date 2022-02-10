@@ -1,4 +1,4 @@
-// const fil = persongalleri j.son
+// konstanter + url og key
 const header = document.querySelector(".h1_kategori");
 const modal = document.querySelector("#modal");
 const url = "https://babushka-dd8a.restdb.io/rest/menu";
@@ -7,6 +7,7 @@ const options = {
     "x-apikey": "600ec2fb1346a1524ff12de4",
   },
 };
+// se om DOM er loaded
 document.addEventListener("DOMContentLoaded", start);
 let retter = [];
 let filter = "alle";
@@ -19,7 +20,7 @@ function start() {
   );
   hentData();
 }
-// eventlistener knyttet til knapperne der vælger hvad for et filter der er aktivit
+// eventlistener knyttet til knapperne der vælger hvad for et filter der er aktivt
 function filtrerRetter() {
   filter = this.dataset.kategori;
   console.log("filter", filter);
@@ -38,6 +39,7 @@ function visRetter() {
   const template = document.querySelector("template").content;
   section.textContent = "";
 
+  // ind til loop view + lyt efter om der er blevet klikket
   retter.forEach((ret) => {
     console.log("kategori", ret.kategori);
     if (filter == ret.kategori || filter == "alle") {
@@ -49,12 +51,11 @@ function visRetter() {
       klon
         .querySelector(".billede")
         .addEventListener("click", () => visDetaljer(ret));
-      // klon.querySelector("article").addEventListener("click", ()=>
-      //   location.href =
       section.appendChild(klon);
     }
   });
 }
+// indholdet til single pop up vindue + lyt efter om der er blevet klikket
 function visDetaljer(ret) {
   console.log(ret);
   modal.querySelector("h2").textContent = ret.navn;
